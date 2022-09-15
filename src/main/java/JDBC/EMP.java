@@ -108,7 +108,8 @@ public class EMP {
 			}
 		}
 			
-			
+		// CLOSING SCANNER OBJECT
+		scan.close();	
 	}
 
 }

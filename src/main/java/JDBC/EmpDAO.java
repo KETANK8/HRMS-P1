@@ -46,7 +46,7 @@ public class EmpDAO {
 		prepstm.setString(4,emp.empLocation); // PUTTING LOCATION NO ON FOURTH MARK
 		prepstm.setInt(5,emp.empSalary); // PUTTING SALARY ON FIFTH MARKS
 		prepstm.setString(6,emp.empPhone); // PUTTING PHONE NO ON SIXTH MARK
-		int count = prepstm.executeUpdate();// UPDATING/ADDING THE BANK ACCOUNT DATA IN DATABASE
+		int count = prepstm.executeUpdate();// ADDING THE EMPLOYEE DATA IN DATABASE
 		
 		return count;
 		}
@@ -84,7 +84,8 @@ public class EmpDAO {
 			Statement hikeStm = con.createStatement();
 			int salary = set.getInt(6);
 			salary = salary+((salary*hike)/100);
-			// UPDATING USER ACCOUNT BALANCE
+			
+			// UPDATING EMPLOYEE SALARY
 			hikeStm.executeUpdate("update employee set empSalary = "+salary+" where empId ="+Id);
 			return salary;
 		}
@@ -98,13 +99,12 @@ public class EmpDAO {
 	public int hikeAll(int hike) throws Exception {
 		Statement stm = con.createStatement();
 		
-		// GETTING USER DETAIL THROUGH ACCOUNT NO
-		 ResultSet set =
-		 stm.executeQuery("select * from employee ");
+		
+		 ResultSet set = stm.executeQuery("select * from employee ");
 		 set.next();
 			Statement wdrawStm = con.createStatement();
 			
-			// UPDATING USER ACCOUNT BALANCE
+			// UPDATING EMPLOYEE SALARY
 			wdrawStm.executeUpdate("update employee set empSalary = empSalary+(empSalary*"+hike+")/100 ");
 			return 1;
 	}

@@ -67,7 +67,7 @@ public class AppTest {
 		assertEquals(0,EDAO.removeEmployee(122));
 		
 		// Testing to delete existing employee
-		assertEquals(1,EDAO.removeEmployee(106	));
+		assertEquals(1,EDAO.removeEmployee(106));
 	}
 
 }
