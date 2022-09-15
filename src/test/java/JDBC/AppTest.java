@@ -16,7 +16,7 @@ import org.junit.jupiter.api.Test;
  * Unit test for simple App.
  */
 public class AppTest {
-	// CREATING OBJECT OF BANK DAO
+	// CREATING OBJECT OF  Employee DAO
 	EmpDAO EDAO = new EmpDAO();
 
 	// CREATING OBJECT OF EMPLOYEE
